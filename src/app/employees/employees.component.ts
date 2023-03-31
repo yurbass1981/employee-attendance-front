@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Employee } from '../models/employee-model';
 import { EmployeesService } from '../services/employees.service';
 
 @Component({
@@ -8,12 +9,19 @@ import { EmployeesService } from '../services/employees.service';
 })
 export class EmployeesComponent implements OnInit {
   title: string;
-  employeesService: EmployeesService;
+  employee: Employee;
 
-  constructor(employeesService: EmployeesService) {
+  constructor(private employeesService: EmployeesService) {
     this.title = 'Employees component';
-    this.employeesService = employeesService;
+    this.employee = null;
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.employeesService.getEmployees()
+    .subscribe(response => {
+      this.employee = response;
+    })
+
+    console.log('Employee: ', this.employee);
+  }
 }
