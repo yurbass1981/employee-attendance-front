@@ -9,19 +9,20 @@ import { EmployeesService } from '../services/employees.service';
 })
 export class EmployeesComponent implements OnInit {
   title: string;
-  employee: Employee | null;
+  employees: Employee[] | null;
 
   constructor(private employeesService: EmployeesService) {
     this.title = 'Employees component';
-    this.employee = null;
+    this.employees = null;
   }
 
   ngOnInit(): void {
     this.employeesService.getEmployees()
-    .subscribe(response => {
-      this.employee = response;
-    })
+    .subscribe((response) => {
+      console.log('Subscribe Employee: ', response);
+      this.employees = response;
+    });
 
-    console.log('Employee: ', this.employee);
+    console.log('Employee: ', this.employees);
   }
 }
