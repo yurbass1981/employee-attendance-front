@@ -17,13 +17,13 @@ export class EmployeesService {
     return this.http.get<Employee[]>('http://localhost:5055/api/Employee');
   }
 
-  getEmployeeById(id: string | number) {
+  getEmployeeById(id: string) {
     return this.http.get('http://localhost:5055/api/Employee', {
       params: new HttpParams().set('id', id)
     })
   }
 
-  deleteEmployeeById(id: string | number) {
+  deleteEmployeeById(id: string) {
     return this.http.delete('http://localhost:5055/api/Employee', {
       params: new HttpParams().set('id', id)
     })
