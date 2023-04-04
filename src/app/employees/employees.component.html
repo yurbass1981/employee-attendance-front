@@ -1,8 +1,3 @@
 <div>
-  <p>{{ title }}</p>
-  <div *ngFor="let employee of employees">
-    <p>{{ employee.name }}</p> 
-    <p>{{ employee.lastName }}</p>
-    <p>{{ employee.age }}</p>   
-  </div>
+  <gui-grid [source]="employees" [columns]="columns"> </gui-grid>
 </div>

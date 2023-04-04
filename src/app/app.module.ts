@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { EmployeesComponent } from './employees/employees.component';
 import { HttpClientModule } from '@angular/common/http';
-import { AgGridModule } from 'ag-grid-angular';
+import { GuiGridModule } from '@generic-ui/ngx-grid';
 
 @NgModule({
   declarations: [
@@ -16,7 +16,7 @@ import { AgGridModule } from 'ag-grid-angular';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    AgGridModule
+    GuiGridModule
   ],
   providers: [],
   bootstrap: [AppComponent]
