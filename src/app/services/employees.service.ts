@@ -13,7 +13,7 @@ export class EmployeesService {
   constructor(private http: HttpClient) {}
 
 
-  getEmployees(): Observable<Employee[]> {
+  getEmployees(page: number, size: number): Observable<Employee[]> {
     return this.http.get<Employee[]>('http://localhost:5055/api/Employee');
   }
 
