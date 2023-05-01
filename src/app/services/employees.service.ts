@@ -14,7 +14,7 @@ export class EmployeesService {
 
 
   getEmployees(page: number, size: number): Observable<Employee[]> {
-    return this.http.get<Employee[]>('http://localhost:5055/api/Employee');
+    return this.http.get<Employee[]>(`http://localhost:5055/api/Employee?page=${page}&size=${size}`);
   }
 
   getEmployeeById(id: string) {
