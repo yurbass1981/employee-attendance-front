@@ -42,7 +42,7 @@ export class EmployeesComponent implements OnInit {
     page: this.defaultPage,
     pageSize: this.defaultPageSize,
     pageSizes: [5, 10, 20],
-    pagerBottom: true,
+    pagerBottom: true
   };
 
   constructor(private employeesService: EmployeesService) {
