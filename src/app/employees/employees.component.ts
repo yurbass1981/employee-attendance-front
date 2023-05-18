@@ -1,12 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Employee } from '../models/employee-model';
 import { EmployeesService } from '../services/employees.service';
-import {
-  GuiColumn,
-  GuiDataType,
-  GuiPaging,
-  GuiPagingDisplay,
-} from '@generic-ui/ngx-grid';
+
 
 @Component({
   selector: 'app-employees',
@@ -18,7 +13,7 @@ export class EmployeesComponent implements OnInit {
   defaultPageSize = 5;
   gridData: { data: Employee[]; total: number };
 
-  columns: Array<GuiColumn> = [
+  columns: Array<{header: string, field: string}> = [
     {
       header: 'Name',
       field: 'name',
@@ -37,13 +32,13 @@ export class EmployeesComponent implements OnInit {
     },
   ];
 
-  paging: GuiPaging = {
-    enabled: true,
-    page: this.defaultPage,
-    pageSize: this.defaultPageSize,
-    pageSizes: [5, 10, 20],
-    pagerBottom: true
-  };
+  // paging: GuiPaging = {
+  //   enabled: true,
+  //   page: this.defaultPage,
+  //   pageSize: this.defaultPageSize,
+  //   pageSizes: [5, 10, 20],
+  //   pagerBottom: true
+  // };
 
   constructor(private employeesService: EmployeesService) {
     this.gridData = { data: [], total: 0 };
